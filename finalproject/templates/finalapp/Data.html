@@ -1,0 +1,30 @@
+{% extends 'finalapp/Navbar.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <table class="table table-dark table-hover">
+                <tr class="text-center">
+                    <th>ROll</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th colspan="2">Modification</th>
+                </tr>
+
+                {% for i in obj %}
+                <tr class="text-center">
+                    <td>{{i.roll}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.phone}}</td>
+                    <td><button class="btn btn-danger"><a href="{% url 'clear' i.id %}">Delete</a></button></td>
+                    <td><button class="btn btn-warning"><a href="{% url 'edit' i.id %}">Update</a></button></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

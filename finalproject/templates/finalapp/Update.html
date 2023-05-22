@@ -1,0 +1,11 @@
+{% extends 'finalapp/Navbar.html' %}
+
+
+
+{% block content %}
+<form action="" method="post" class="w-50 p-3 border border-dark shadow">
+{% csrf_token %}
+{{form.as_p}}
+<input type="submit" class="btn btn-success">
+</form>
+{% endblock %}

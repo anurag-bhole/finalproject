@@ -1,0 +1,17 @@
+{% extends 'finalapp/Navbar.html' %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    {% for field in form %}
+    <label for="">{{field.label}}</label>
+    <p>{{field}}</p>
+    {% if field.errors %}
+    {% for errors in field.errors %}
+    <p style="color:red">{{errors}}</p>
+    {% endfor %}
+    {% endif %}
+    {% endfor %}
+    <input type="submit">
+</form>
+{% endblock %}
